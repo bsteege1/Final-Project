@@ -1,0 +1,8 @@
+﻿  TreeDriver.cpp
+c:\users\brandon\documents\github\final-project\project brandon\project brandon\nodedata.h(29): warning C4267: 'argument': conversion from 'size_t' to 'const _Elem', possible loss of data
+          with
+          [
+              _Elem=char
+          ]
+c:\users\brandon\documents\github\final-project\project brandon\project brandon\nodedata.h(35): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Project Brandon.vcxproj -> C:\Users\Brandon\Documents\GitHub\Final-Project\Project Brandon\Debug\Project Brandon.exe
