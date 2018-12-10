@@ -115,7 +115,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TestHash.cpp" />
+    <ClCompile Include="TreeDriver.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Hash.h" />
+    <ClInclude Include="NodeData.h" />
+    <ClInclude Include="RandomString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
