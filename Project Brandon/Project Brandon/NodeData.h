@@ -58,7 +58,7 @@ string nodeData::hashed(string one, string two)
 	auto hashed = hasher(characters);
 	hashedString = to_string(hashed);
 	cout << hashedString << " hash" << endl;
-	system("pause");
+	//system("pause");
 	return hashedString;
 }
 

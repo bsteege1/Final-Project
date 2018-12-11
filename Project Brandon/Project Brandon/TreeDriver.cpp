@@ -5,11 +5,13 @@ using namespace std;
 
 int main()
 {
+	nodeData free;
 	nodeData tree;
+	nodeData test;
 	vector <struct bst> v1;
-	MakeNode(v1, tree);
-	//Insert(v1, 20);
-	//Insert(v1, 6);
+	MakeNode(v1, free);
+	Insert(v1, tree);
+	Insert(v1, test);
 	//Insert(v1, 40);
 	//Insert(v1, 35);
 	//Insert(v1, 16);

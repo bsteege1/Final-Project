@@ -35,9 +35,11 @@ void setright(vector<struct bst> &v1, int currIndex, nodeData aData)
 
 void Insert(vector<struct bst> &v1, nodeData aData)
 {
+	cout << "step 1" << endl;
 	if (v1.size() == 0)
 	{
-		cout << "Note is not made yet. MakeNode first..." << endl;
+		cout << "step 2" << endl;
+		MakeNode(v1, aData);
 		return;
 	}
 	unsigned int currentIdx = 0;
@@ -45,6 +47,7 @@ void Insert(vector<struct bst> &v1, nodeData aData)
 	{
 			if (v1[currentIdx].leftIdx == -1)
 			{
+				cout << "step 3 left" << endl;
 				setleft(v1, currentIdx, aData);
 				break;
 			}
@@ -54,6 +57,7 @@ void Insert(vector<struct bst> &v1, nodeData aData)
 		
 			if (v1[currentIdx].rightIdx == -1)
 			{
+				cout << "step 3 right" << endl;
 				setright(v1, currentIdx, aData);
 				break;
 			}
