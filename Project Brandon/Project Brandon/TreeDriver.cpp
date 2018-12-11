@@ -4,9 +4,6 @@ using namespace std;
 
 int main()
 {
-	//nodeData test;
-	string id;
-	genRand(id);
-	system("pause");
+	nodeData test;
 	return 0;
 }
