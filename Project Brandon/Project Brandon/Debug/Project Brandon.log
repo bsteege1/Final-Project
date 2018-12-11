@@ -1,3 +1,3 @@
 ﻿  TreeDriver.cpp
-c:\users\brandon\documents\github\final-project\project brandon\project brandon\nodedata.h(68): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\brandon\documents\github\final-project\project brandon\project brandon\nodedata.h(67): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Project Brandon.vcxproj -> C:\Users\Brandon\Documents\GitHub\Final-Project\Project Brandon\Debug\Project Brandon.exe

@@ -3,7 +3,6 @@
 
 #include "NodeData.h"
 
-
 struct bst
 {
 	nodeData data;
@@ -69,21 +68,3 @@ void Insert(vector<struct bst> &v1, nodeData aData)
 
 #endif
 
-/*
-class tree
-{
-	nodeData node;
-	int leftIdx;
-	int rightIdx;
-
-public:
-	void createNode(vector<class>, nodeData node);
-};
-
-void tree::createNode(vector<class> &tr, nodeData node)
-{
-	tree t1 = { node, -1, -1 };
-	v1.push_back(b1);
-}
-
-*/

@@ -13,13 +13,12 @@ class nodeData
 	string ParentID = genRand("random");
 	string Event = inputEvent();
 	string ID = hashed(Event, ParentID);
-	string Rhash = NULL;
-	string Lhash = NULL;
-	string Rhist = NULL;
-	string Lhist = NULL;
-	vector<string> RightHist;
-	vector<string> LeftHist;
-	
+	string Rhash = "";
+	string Lhash = "";
+	vector<string> *RightHist = new vector<string>;
+	vector<string> *LeftHist = new vector<string>;
+	//string Rhist = "";
+	//string Lhist = "";
 
 public:
 	string genRand(string random);
