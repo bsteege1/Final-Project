@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClInclude Include="NodeData.h" />
     <ClInclude Include="RandomString.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TreeDriver.cpp" />

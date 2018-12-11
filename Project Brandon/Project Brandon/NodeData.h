@@ -1,4 +1,6 @@
 //https://stackoverflow.com/questions/16075271/hashing-a-string-to-an-integer-in-c
+#ifndef NODEDATA_H
+#define NODEDATA_H
 
 #include "RandomString.h"
 #include <string>
@@ -70,3 +72,4 @@ string nodeData::genRand(string random)
 	}
 	return output;
 }
+#endif
