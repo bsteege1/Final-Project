@@ -80,11 +80,11 @@ void cascadeUp(Tree* node, int c)
 }
 
 void Print(Tree* node) {
-	if (node) {
-		Print(node->Left);
-		cout << node->data.printNode() << endl;
-		Print(node->Right);
-	}
+	//if (node) {
+	//	Print(node->Left);
+	//	cout << node->data.printNode() << endl;
+	//	Print(node->Right);
+	//}
 }
 
 #endif
