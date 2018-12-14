@@ -3,21 +3,20 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main() 
 {
-	nodeData free;
-	nodeData tree;
-	nodeData test;
-	vector <struct bst> v1;
-	MakeNode(v1, free);
-	Insert(v1, tree);
-	Insert(v1, test);
-	//Insert(v1, 40);
-	//Insert(v1, 35);
-	//Insert(v1, 16);
-	//Insert(v1, 7);
+	Tree* Root = NULL;
+	Root = new Tree;
+	//initializeRoot(Root);
+	cout << "Passed initilized " << endl;
 
-	//nodeData test;
-	system("pause");
-	return 0;
+	int count(0);
+
+	fillLeft(Root);
+	cout << "filled left!!" << endl;
+	fillRight(Root);
+	cout << "filled right!!" << endl;
+	Print(Root);
+
+	system("PAUSE");
 }

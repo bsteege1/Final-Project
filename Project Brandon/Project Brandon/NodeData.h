@@ -17,6 +17,7 @@ class nodeData
 	string Lhash = "";
 	vector<string> *RightHist = new vector<string>;
 	vector<string> *LeftHist = new vector<string>;
+	//int identifer = 1;
 	//string Rhist = "";
 	//string Lhist = "";
 
@@ -24,7 +25,20 @@ public:
 	string genRand(string random);
 	string hashed(string one, string two);
 	string inputEvent();
+	string printNode();
+	string getLhash();
 };
+
+string nodeData::printNode()
+{
+	string data = "The Pancake is Round";
+	return data;
+}
+
+string nodeData::getLhash()
+{
+	return Lhash;
+}
 
 string nodeData::inputEvent()
 {

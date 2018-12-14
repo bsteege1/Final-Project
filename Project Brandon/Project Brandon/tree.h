@@ -1,68 +1,89 @@
-#ifndef TREE_H
-#define TREE_H
+
+#ifndef _TREE_H_
+#define _TREE_H_
 
 #include "NodeData.h"
+#include <iostream>
 
-struct bst
-{
+using namespace std;
+
+struct Tree {
 	nodeData data;
-	int leftIdx;
-	int rightIdx;
+	Tree* Right;
+	Tree* Left;
+	Tree* Parent;
 };
 
-void MakeNode(vector <struct bst> &v1, nodeData aData)
+Tree* Current = NULL;
+
+void initializeRoot(Tree* rt)
 {
-	struct bst b1 = { aData, -1, -1 };
-	v1.push_back(b1);
+	nodeData node;
+	rt->data = node;
+	//rt->Left = NULL;
+	//rt->Right = NULL;
+	//rt->Parent = NULL;
 }
 
-void setleft(vector <struct bst>&v1, int currIndex, nodeData aData)
+void fillLeft(Tree* node)
 {
-	unsigned int leftIndex = v1.size();
-	v1[currIndex].leftIdx = leftIndex;
-	struct bst b1 = { aData, -1, -1 };
-	v1.push_back(b1);
-}
-
-void setright(vector<struct bst> &v1, int currIndex, nodeData aData)
-{
-	unsigned int rightIndex = v1.size();
-	v1[currIndex].rightIdx = rightIndex;
-	struct bst b1 = { aData, -1, -1 };
-	v1.push_back(b1);
-}
-
-void Insert(vector<struct bst> &v1, nodeData aData)
-{
-	cout << "step 1" << endl;
-	if (v1.size() == 0)
+	Current = node;
+	node->Left = Current;
+	if (node->Left == NULL)
 	{
-		cout << "step 2" << endl;
-		MakeNode(v1, aData);
-		return;
+		Tree* LeftBranch = NULL;
+		//initializeRoot(LeftBranch);
+		node->Left = LeftBranch;
 	}
-	unsigned int currentIdx = 0;
-	while (currentIdx < v1.size())
+}
+
+void fillRight(Tree* node)
+{
+	Current = node;
+	node->Parent = Current;
+	if (!(node->Right))
 	{
-			if (v1[currentIdx].leftIdx == -1)
-			{
-				cout << "step 3 left" << endl;
-				setleft(v1, currentIdx, aData);
-				break;
-			}
-			else
-				currentIdx = v1[currentIdx].leftIdx;
-		
-		
-			if (v1[currentIdx].rightIdx == -1)
-			{
-				cout << "step 3 right" << endl;
-				setright(v1, currentIdx, aData);
-				break;
-			}
-			else
-				currentIdx = v1[currentIdx].rightIdx;
-		
+		Tree* RightBranch = NULL;
+		node->Right = RightBranch;
+	}
+}
+
+//fills an entire row of the binary tree
+//sets current to the node the function is called on to allow for the setting of the parent node
+//then sets current to the left node of the tree and determines if it is empty and needs to be filled
+//This process is repeated with the right node. 
+void fillRow(Tree* node, int c)
+{
+	Current = node;
+	node->Parent = Current;
+	Current = node->Left;
+	if (Current == NULL)
+	{
+		fillLeft(Current);
+		c++; //lol
+	}
+	else
+	{
+		cout << "This row is full" << endl;
+	}
+
+}
+
+void cascadeUp(Tree* node, int c)
+{
+	while (c > 0)
+	{
+		Current = node->Parent;
+		c--;
+		cascadeUp(Current, c);
+	}
+}
+
+void Print(Tree* node) {
+	if (node) {
+		Print(node->Left);
+		cout << node->data.printNode() << endl;
+		Print(node->Right);
 	}
 }
 
