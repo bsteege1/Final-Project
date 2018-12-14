@@ -27,12 +27,18 @@ public:
 	string inputEvent();
 	string printNode();
 	string getLhash();
+	string getParentID();
 };
 
 string nodeData::printNode()
 {
-	string data = "The Pancake is Round";
+	string data = getParentID();
 	return data;
+}
+
+string nodeData::getParentID()
+{
+	return ParentID;
 }
 
 string nodeData::getLhash()

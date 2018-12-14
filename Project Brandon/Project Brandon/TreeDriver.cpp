@@ -7,16 +7,11 @@ int main()
 {
 	Tree* Root = NULL;
 	Root = new Tree;
-	//initializeRoot(Root);
-	cout << "Passed initilized " << endl;
-
-	int count(0);
-
-	fillLeft(Root);
-	cout << "filled left!!" << endl;
-	fillRight(Root);
-	cout << "filled right!!" << endl;
+	int count = 1;
+	count = fillRow(Root, count);
+	cout << "This is the count: " << count << endl;
 	Print(Root);
+
 
 	system("PAUSE");
 }
