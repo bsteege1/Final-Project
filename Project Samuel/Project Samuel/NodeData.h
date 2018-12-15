@@ -1,4 +1,6 @@
 //https://stackoverflow.com/questions/16075271/hashing-a-string-to-an-integer-in-c
+#ifndef NODEDATA_H
+#define NODEDATA_H
 
 #include "RandomString.h"
 #include <string>
@@ -8,9 +10,9 @@ using namespace std;
 
 class nodeData
 {
-	string ID = NULL;
-	string ParentID = NULL;
-	string Event = NULL;
+	string ParentID = genRand("random");
+	string Event = inputEvent();
+	string ID = hashed(Event, ParentID);
 	string Rhash = NULL;
 	string Lhash = NULL;
 	string Rhist = NULL;
@@ -18,27 +20,56 @@ class nodeData
 	vector<string> RightHist;
 	vector<string> LeftHist;
 
+
 public:
-	void genRand(string random);
-	string hashed(string data);
+	string genRand(string random);
+	string hashed(string one, string two);
+	string inputEvent();
 };
 
-int hashed(string str)
+string nodeData::inputEvent()
 {
-	hash<string> hasher;
-	auto hashed = hasher(str);
-	return hashed;
+	string raw;
+	cout << "Please enter an event up to 1024 characters long: " << endl;
+	cin >> raw;
+	if (raw.length() > 1024)
+	{
+		cout << "Please enter an event up to 1024 characters long: " << endl;
+		cin >> raw;
+	}
+
+	return raw;
 }
 
-void genRand(string random)
+string nodeData::hashed(string one, string two)
 {
-	int output = 0;
+	hash<string> hasher;
+	string characters = "";
+	characters += one[0];
+	characters += one[1];
+	characters += one[2];
+	characters += one[3];
+	characters += two[0];
+	characters += two[1];
+	characters += two[2];
+	characters += two[3];
+	cout << characters << " characters" << endl;
+	string hashedString = "";
+	auto hashed = hasher(characters);
+	hashedString = to_string(hashed);
+	cout << hashedString << " hash" << endl;
+	system("pause");
+	return hashedString;
+}
+
+string nodeData::genRand(string random)
+{
+	string output;
 	srand(time(0));
 	for (int z = 0; z < 8; z++)
 	{
-		random += genRandom();
+		output += genRandom();
 	}
-	cout << "\nBefore hash: " << random << endl;
-	output = hashed(random);
-	cout << "After Hash: " << output << endl;
+	return output;
 }
+#endif

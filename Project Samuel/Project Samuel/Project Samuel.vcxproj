@@ -122,6 +122,7 @@
     <ClInclude Include="Hash.h" />
     <ClInclude Include="NodeData.h" />
     <ClInclude Include="RandomString.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
