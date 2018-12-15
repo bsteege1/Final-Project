@@ -14,9 +14,10 @@ struct TreeNode
 	string rawEvent = "";
 	string leftHash = "";
 	string rightHash = "";
-	string lHist[31];
-	string rHist[31];
-
+	string lHist[15];
+	string rHist[15];
+	
+	//hash funtion creates a hash for the IDs of the node
 	string hashed(string one, string two)
 	{
 		hash<string> hasher;
@@ -29,13 +30,13 @@ struct TreeNode
 		characters += two[1];
 		characters += two[2];
 		characters += two[3];
-		//cout << characters << " characters" << endl;
 		string hashedString = "";
 		auto hashed = hasher(characters);
 		hashedString = to_string(hashed);
 		return hashedString;
 	}
 
+	//creates a random string for parent ID
 	string genRand()
 	{
 		string output;
@@ -47,6 +48,8 @@ struct TreeNode
 		return output;
 	}
 
+	//Insert will create the initial node as a root if location = 0, otherwise it fills ID, Parent ID, and Raw Event as it is a child. 
+	//
 	TreeNode insert(string raw, string parID, int location)
 	{
 		TreeNode node;
@@ -68,14 +71,14 @@ struct TreeNode
 	
 	string update(TreeNode tree[], int k)
 	{
-		if (!(k % 2))
-		{
+		//if (!(k % 2))
+		//{
 			return tree[k].leftHash;
-		}
-		else
-		{
-			return tree[k].rightHash;
-		}
+		//}
+		//else
+		//{
+		//	return tree[k].rightHash;
+		//}
 		
 
 	}
@@ -98,28 +101,33 @@ int main()
 	TreeNode testNode;
 	Tree[0] = testNode.insert("sfsdfgdfgdfgdf", "dgksdfsdfsdfsdfjhkjf", i);
 	i++;
-	while (i < 31)
+	while (i <= 30)
 	{
-		j = 30;
-		Tree[i] = testNode.insert("sfsdfgdfgdfgdf", Tree[i - 1].ID, i);
-		hash<string> hasher;
-		auto hashed = hasher((Tree[j].ID) + (Tree[j].parentID) + (Tree[j].rawEvent) + (Tree[j].leftHash) + (Tree[j].rightHash));
+		j = i;
+		Tree[i] = testNode.insert("sfsdfgdfgdfgdf", Tree[(i - 1)/2].ID, i);
+		
 		while (j > 0)
 		{
 			p = (j - 1) / 2;
-			if (j % 2)
+			//determines whether to insert left or right
+			if (j % 2) //right
 			{
-				//cout << "else" << endl;
+				hash<string> hasher;
+				auto hashed = hasher((Tree[j].ID) + (Tree[j].parentID) + (Tree[j].rawEvent) + (Tree[j].leftHash) + (Tree[j].rightHash));
 				Tree[p].rightHash = to_string(hashed).substr(0, 8);
-				Tree[p].rHist[xR] = testNode.update(Tree, j);//.push_back(Tree[p].rightHash);
+				
+				Tree[p].rHist[xR] = "sdfsdfsdf";//testNode.update(Tree, j);
+				
 				xR++;
 				
 			}
-			else
+			else //left
 			{
+				hash<string> hasher;
+				auto hashed = hasher((Tree[j].ID) + (Tree[j].parentID) + (Tree[j].rawEvent) + (Tree[j].leftHash) + (Tree[j].rightHash));
 				Tree[p].leftHash = to_string(hashed).substr(0, 8);
-				Tree[p].lHist[xL] = testNode.update(Tree, j);
-				xL++;//.push_back(Tree[p].leftHash);
+				Tree[p].lHist[xL] = "kl;kl;k;lk";//testNode.update(Tree, j);
+				xL++;
 			}
 			j = p;
 			//update(p, j);
@@ -130,7 +138,7 @@ int main()
 	cout << Tree[0].ID << endl;
 	cout << Tree[1].ID << endl;
 	cout << Tree[2].ID << endl;
-	cout << Tree[18].leftHash << endl;
+	cout << Tree[14].lHist[0] << endl;
 	system("pause");
 	return 0;
 }
