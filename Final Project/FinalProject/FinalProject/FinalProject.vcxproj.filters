@@ -20,9 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TreeStruct.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="randomString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
