@@ -1,4 +1,4 @@
-# Final-Project.png
+# Final-Project
 http://www.cplusplus.com/
 
 https://en.cppreference.com/w/cpp/string/basic_string/hash
