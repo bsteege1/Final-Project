@@ -1,4 +1,9 @@
-//http://www.cplusplus.com/forum/windows/88843/
+//Final-Project
+//randomString.h
+//COSC 2030
+//Brandon Steege and Leonardo Garcia
+//12/15/18
+
 #ifndef RANDOMSTRING_H
 #define RANDOMSTRING_H
 
