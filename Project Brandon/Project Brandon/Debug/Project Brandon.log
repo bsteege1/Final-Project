@@ -1,4 +1,0 @@
-﻿  TreeDriver.cpp
-c:\users\brandon\documents\github\final-project\project brandon\project brandon\nodedata.h(87): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\brandon\documents\github\final-project\project brandon\project brandon\tree.h(41): error C2440: 'return': cannot convert from 'Tree *' to 'Tree'
-  c:\users\brandon\documents\github\final-project\project brandon\project brandon\tree.h(41): note: No constructor could take the source type, or constructor overload resolution was ambiguous
